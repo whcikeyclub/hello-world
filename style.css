@@ -2,8 +2,12 @@ h1, h2, h3, h4 {
     font-family: Garamond, "Times New Roman", Times, serif;
 }
 
+nav {
+    font-family: Constantia, 'Times New Roman', Times, serif;
+}
+
 body {
-    font-family: Constantia, Georgia, "Times New Roman", Times, serif;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 footer {
