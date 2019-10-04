@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>WHCI Key Club - Hours Submission</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+  <link rel="icon" href="img/key_icon.png" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/2eb88ffea0.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="layout_nav"></div>
+
+  <div class="container pt-3">
+    <div id="wrapper">
+      <div class="alert alert-danger">
+        <h3 class="alert-heading font-weight-bold">Please Do Not Use Yet!</h3>
+        This is currently under construction, and it does not work yet!
+        <br />
+        We are sorry for the inconvenience.
+      </div>
+
+      <h2 class="font-weight-bold text-center display-4">Hours Submission</h2>
+      <form>
+        <div class="form-group">
+          <label for="whci-date">Date</label>
+          <input type="date" id="whci-date" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="whci-place">Place</label>
+          <input type="text" id="whci-place" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="whci-charge">Executive/Person in Charge's Name</label>
+          <input type="text" id="whci-charge" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="whci-num">Number of Hours</label>
+          <input type="number" id="whci-num" class="form-control" min="0" step="0.5" />
+        </div>
+        <button type="submit" id="whci-hours" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <div id="layout_footer"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#layout_nav").load("layout/nav.html", function() { });
+      $("#layout_footer").load("layout/footer.html", function() { });
+    });
+  </script>
+</body>
+</html>
