@@ -26,6 +26,42 @@
       </div>
 
       <h2 class="font-weight-bold text-center display-4">Event Suggestion</h2>
+
+      <form id="whci-suggest-form">
+        <div class="form-group row">
+          <label for="whci-suggest-name" class="col-sm-2 col-form-label">Event Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-suggest-name" class="form-control" placeholder="Event Name" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whci-suggest-date" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-10">
+            <input type="date" id="whci-suggest-date" class="form-control" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whci-suggest-place" class="col-sm-2 col-form-label">Place</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-suggest-place" class="form-control" placeholder="Event Place" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whci-suggest-charge" class="col-sm-2 col-form-label">Reference's Contact</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-suggest-charge" class="form-control" placeholder="Person in Charge of Event's Contact Information" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whci-suggest-num" class="col-sm-2 col-form-label">Approx. # of Hours</label>
+          <div class="col-sm-10">
+            <input type="number" id="whci-suggest-num" class="form-control" min="0" step="0.5" placeholder="Rounded to Half an Hour" required />
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" id="whci-suggest-btn" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
     </div>
 
     <div id="layout_footer"></div>
@@ -38,6 +74,10 @@
     $(document).ready(function() {
       $("#layout_nav").load("layout/nav.html", function() { });
       $("#layout_footer").load("layout/footer.html", function() { });
+
+      $("#whci-suggest-form").submit(function(e) {
+        e.preventDefault();
+      });
     });
   </script>
 </body>

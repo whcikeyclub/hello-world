@@ -26,6 +26,33 @@
       </div>
 
       <h2 class="font-weight-bold text-center display-4">Hours Check</h2>
+
+      <form id="whci-check-form">
+        <div class="form-group row">
+          <label for="whci-check-name" class="col-sm-2 col-form-label">Student Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-check-name" class="form-control" placeholder="Student Name" required />
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" id="whci-check-btn" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      
+      <div id="whci-check-table" class="table-responsive">
+        <table class="table table-striped table-hover table-bordered text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Place</th>
+              <th scope="col">Reference</th>
+              <th scope="col"># of Hours</th>
+            </tr>
+          </thead>
+          <tbody id="whci-check-table-body">
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div id="layout_footer"></div>
@@ -38,6 +65,14 @@
     $(document).ready(function() {
       $("#layout_nav").load("layout/nav.html", function() { });
       $("#layout_footer").load("layout/footer.html", function() { });
+
+      $("#whci-check-table").hide();
+
+      $("#whci-check-form").submit(function(e) {
+        e.preventDefault();
+        $("#whci-check-form").hide();
+        $("#whci-check-table").show();
+      });
     });
   </script>
 </body>

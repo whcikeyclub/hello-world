@@ -29,33 +29,39 @@
 
       <form id="whci-hour-form">
         <div class="form-group row">
-          <label for="whci-name" class="col-sm-1 col-form-label">Name</label>
-          <div class="col-sm-11">
-            <input type="text" id="whci-name" class="form-control" placeholder="Name" required />
+          <label for="whci-hour-name" class="col-sm-2 col-form-label">Student Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-hour-name" class="form-control" placeholder="Student Name" required />
           </div>
         </div>
         <div class="form-group row">
-          <label for="whci-date" class="col-sm-1 col-form-label">Date</label>
-          <div class="col-sm-11">
-            <input type="date" id="whci-date" class="form-control" required />
+          <label for="whci-hour-event" class="col-sm-2 col-form-label">Event Name</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-hour-event" class="form-control" placeholder="Event Name" required />
           </div>
         </div>
         <div class="form-group row">
-          <label for="whci-place" class="col-sm-1 col-form-label">Place</label>
-          <div class="col-sm-11">
-            <input type="text" id="whci-place" class="form-control" placeholder="Event Place" required />
+          <label for="whci-hour-date" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-10">
+            <input type="date" id="whci-hour-date" class="form-control" required />
           </div>
         </div>
         <div class="form-group row">
-          <label for="whci-charge" class="col-sm-1 col-form-label">Reference</label>
-          <div class="col-sm-11">
-            <input type="text" id="whci-charge" class="form-control" placeholder="Executive/Person in Charge of Event" required />
+          <label for="whci-hour-place" class="col-sm-2 col-form-label">Place</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-hour-place" class="form-control" placeholder="Event Place" required />
           </div>
         </div>
         <div class="form-group row">
-          <label for="whci-num" class="col-sm-1 col-form-label">Hours</label>
-          <div class="col-sm-11">
-            <input type="number" id="whci-num" class="form-control" min="0" step="0.5" required />
+          <label for="whci-hour-charge" class="col-sm-2 col-form-label">Reference</label>
+          <div class="col-sm-10">
+            <input type="text" id="whci-hour-charge" class="form-control" placeholder="Executive/Person in Charge of Event" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whci-hour-num" class="col-sm-2 col-form-label"># of Hours</label>
+          <div class="col-sm-10">
+            <input type="number" id="whci-hour-num" class="form-control" min="0" step="0.5" placeholder="Rounded to Half an Hour" required />
           </div>
         </div>
         <div class="text-center">
@@ -74,6 +80,10 @@
     $(document).ready(function() {
       $("#layout_nav").load("layout/nav.html", function() { });
       $("#layout_footer").load("layout/footer.html", function() { });
+
+      $("#whci-hour-form").submit(function(e) {
+        e.preventDefault();
+      });
     });
   </script>
 </body>
