@@ -42,7 +42,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function() {
-      $("#layout_nav").load("layout/nav.html", function() { });
+      $("#layout_nav").load("layout/nav.html", function() {
+        $("#whci-menu-btn-times").hide();
+
+        $("#whci-menu-btn").on("click", function(e) {
+          $("#whci-menu-btn-bars").toggle();
+          $("#whci-menu-btn-times").toggle();
+        });
+      });
       $("#layout_footer").load("layout/footer.html", function() { });
     });
   </script>

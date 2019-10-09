@@ -1,3 +1,10 @@
+#layout_nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
 h1, h2, h3, h4 {
     font-family: Garamond, "Times New Roman", Times, serif;
 }
