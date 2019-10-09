@@ -74,12 +74,19 @@
     $(document).ready(function() {
       $("#layout_nav").load("layout/nav.html", function() {
         $("#whci-menu-btn-times").hide();
+        $("#whci-menu-btn-text").html("Menu");
 
         $("#whci-menu-btn").on("click", function(e) {
           $("#whci-menu-btn-bars").toggle();
           $("#whci-menu-btn-times").toggle();
+
+          if ($("#whci-menu-btn-text").html() == "Menu")
+            $("#whci-menu-btn-text").html("Close");
+          else if ($("#whci-menu-btn-text").html() == "Close")
+            $("#whci-menu-btn-text").html("Menu");
         });
       });
+
       $("#layout_footer").load("layout/footer.html", function() { });
 
       $("#whci-suggest-form").submit(function(e) {
