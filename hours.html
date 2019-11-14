@@ -18,14 +18,9 @@
 
   <div class="container pt-3">
     <div id="wrapper">
-      <div class="alert alert-danger">
-        <h3 class="alert-heading font-weight-bold">Please Do Not Use Yet!</h3>
-        This is currently under construction, and it does not work yet!
-        <br />
-        We are sorry for the inconvenience.
-      </div>
-
       <h2 class="font-weight-bold text-center display-4">Hours Submission</h2>
+
+      <div id="whci-hour-temp" class="text-center">Thank you for your submission! Reloading in 3 seconds...</div>
 
       <form id="whci-hour-form">
         <div class="form-group row">
@@ -43,7 +38,7 @@
         <div class="form-group row">
           <label for="whci-hour-date" class="col-sm-2 col-form-label">Date</label>
           <div class="col-sm-10">
-            <input type="date" id="whci-hour-date" class="form-control" required />
+            <input type="date" id="whci-hour-date" class="form-control" min="2013-01-01" required />
           </div>
         </div>
         <div class="form-group row">
@@ -78,6 +73,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function() {
+      $("#whci-hour-temp").hide();
+
       $("#layout_nav").load("layout/nav.html", function() {
         $("#whci-menu-btn-times").hide();
         $("#whci-menu-btn-text").html("Menu");
@@ -97,6 +94,16 @@
 
       $("#whci-hour-form").submit(function(e) {
         e.preventDefault();
+        const whci_name = $("#whci-hour-name").val(), whci_event = $("#whci-hour-event").val(),
+          whci_date = $("#whci-hour-date").val(), whci_place = $("#whci-hour-place").val(),
+          whci_charge = $("#whci-hour-charge").val(), whci_num = $("#whci-hour-num").val();
+        const whci = { name: whci_name, event: whci_event, date: whci_date, place: whci_place, charge: whci_charge, num: whci_num };
+        const whci_json = JSON.stringify(whci);
+
+        $("#whci-hour-temp").show();
+        $("#whci-hour-form").hide();
+
+        setTimeout(function() { window.location.reload(true); }, 3000);
       });
     });
   </script>
