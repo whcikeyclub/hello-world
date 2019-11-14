@@ -100,6 +100,21 @@
         const whci = { name: whci_name, event: whci_event, date: whci_date, place: whci_place, charge: whci_charge, num: whci_num };
         const whci_json = JSON.stringify(whci);
 
+        const url = "https://script.google.com/macros/s/AKfycbybgk0qXZ8wW-M-B46HgB1ISHq0xnIeIUtlsvnGtvYDEVfDrYCg/exec";
+        console.info("url: " + url);
+        console.info("data: " + whci_json);
+
+        var jqxhr = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: whci_json
+        }).done(function(response, textStatus, jqXHR) {
+          console.info("success: " + response);
+        }).fail(function(jqHXR, textStatus, errorThrown) {
+          console.error("fail: " + errorThrown)
+        });
+
         $("#whci-hour-temp").show();
         $("#whci-hour-form").hide();
 
