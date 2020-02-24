@@ -101,8 +101,8 @@
         const whci_json = JSON.stringify(whci);
 
         const url = "https://script.google.com/macros/s/AKfycbybgk0qXZ8wW-M-B46HgB1ISHq0xnIeIUtlsvnGtvYDEVfDrYCg/exec";
-        console.info("url: " + url);
-        console.info("data: " + whci_json);
+        //console.info("url: " + url);
+        //console.info("data: " + whci_json);
 
         var jqxhr = $.ajax({
           url: url,
@@ -110,9 +110,9 @@
           dataType: "json",
           data: whci_json
         }).done(function(response, textStatus, jqXHR) {
-          console.info("success: " + response);
+          //console.info("success: " + response);
         }).fail(function(jqHXR, textStatus, errorThrown) {
-          console.error("fail: " + errorThrown);
+          //console.error("fail: " + errorThrown);
         });
 
         alert("Error: The database is offline! Could not process request.");
